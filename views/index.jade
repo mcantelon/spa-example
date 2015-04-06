@@ -1,0 +1,51 @@
+extends layout
+
+block content
+
+  #app.container
+    nav.navbar.navbar-default
+      .container-fluid
+        #navbar.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li#home-tab
+              a
+                | Home
+            li#listings-tab.private
+              a
+                | Listings
+
+          ul.nav.navbar-nav.navbar-right
+            li#login-tab.anonymous
+              a
+                | Login
+            li#logout-tab.private
+              a
+                | Logout
+
+    #message
+
+    #home-pane.pane
+      h3
+        | Welcome to the site!
+
+    #listings-pane.pane.private
+      | Listings pane
+
+    #login-pane.pane
+      .panel.panel-default
+        .panel-heading
+          | Log in
+        .panel-body
+          form#login-form
+            .form-group
+              label(for='login-username')
+                | Username
+              input#login-username.form-control(type='text')
+            .form-group
+              label(for='login-password')
+                | Password
+              input#login-password.form-control(type='password')
+            input#login-button.btn.btn-primary(type='button', value='Log in')
+
+    #404-pane.pane
+      | Not found
